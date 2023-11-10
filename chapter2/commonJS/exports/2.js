@@ -1,0 +1,1 @@
+exports = () => console.log('hello')
