@@ -13,7 +13,7 @@ export function urlToFilename(url) {
       return slug(component, { remove: null })
     })
     .join('/')
-  let filename = path.join(parsedUrl.hostname, urlPath)
+  let filename = './' + path.join(parsedUrl.hostname, urlPath)
   if (!path.extname(filename).match(/htm/)) {
     filename += '.html'
   }

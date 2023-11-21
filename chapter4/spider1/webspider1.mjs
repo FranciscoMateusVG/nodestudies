@@ -1,31 +1,31 @@
 import fs from 'fs'
-import { mkdirp } from 'mkdirp'
+import mkdirp from 'mkdirp'
 import path from 'path'
 import superagent from 'superagent'
 import { urlToFilename } from '../utils.mjs'
 
-export function spider(url, callback) {
+export function spider(url, cb) {
   const filename = urlToFilename(url)
-  console.log('aqui')
-  console.log(filename)
   fs.access(filename, (err) => {
+    // [1]
     if (err && err.code === 'ENOENT') {
       console.log(`Downloading ${url} into ${filename}`)
       superagent.get(url).end((err, res) => {
+        // [2]
         if (err) {
-          callback(err)
+          cb(err)
         } else {
-          const pathString = path.dirname(filename)
-          console.log(pathString)
-          mkdirp(pathString, (err) => {
+          mkdirp(path.dirname(filename), (err) => {
+            // [3]
             if (err) {
-              callback(err)
+              cb(err)
             } else {
               fs.writeFile(filename, res.text, (err) => {
+                // [4]
                 if (err) {
-                  callback(err)
+                  cb(err)
                 } else {
-                  callback(null, filename, true)
+                  cb(null, filename, true)
                 }
               })
             }
@@ -33,7 +33,7 @@ export function spider(url, callback) {
         }
       })
     } else {
-      callback(null, filename, false)
+      cb(null, filename, false)
     }
   })
 }
