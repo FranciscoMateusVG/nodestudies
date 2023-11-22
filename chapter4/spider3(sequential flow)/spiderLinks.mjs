@@ -9,12 +9,12 @@ export function spiderLinks(currentUrl, body, nesting, cb) {
   if (links.length === 0) return process.nextTick(cb)
 
   // This just goes rambo mode in parallel
-  for (const link of links) {
-    spider(link, nesting - 1, cb)
-  }
+  //   for (const link of links) {
+  //     spider(link, nesting - 1, cb)
+  //   }
 
   // This goes sequential
-  //   iterate(0, links, nesting, cb)
+  iterate(0, links, nesting, cb)
 }
 
 function iterate(index, links, nesting, cb) {
