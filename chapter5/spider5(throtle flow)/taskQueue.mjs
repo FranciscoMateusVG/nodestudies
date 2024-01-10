@@ -22,14 +22,21 @@ export class TaskQueue extends EventEmitter {
 
     while (this.running < this.concurrency && this.queue.length) {
       const task = this.queue.shift()
-      task((err) => {
-        if (err) return this.emit('error', err)
-
+      task().finally(() => {
         this.running--
-        process.nextTick(this.next.bind(this))
+        this.next()
       })
 
       this.running++
     }
+  }
+
+  runTask(task) {
+    return new Promise((resolve, reject) => {
+      this.queue.push(() => {
+        return task().then(resolve, reject)
+      })
+      process.nextTick(this.next.bind(this))
+    })
   }
 }

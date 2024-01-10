@@ -1,15 +1,22 @@
+import { promises as fsPromises } from 'fs'
+import mkdirp from 'mkdirp'
+import { dirname } from 'path'
 import superagent from 'superagent'
-import { saveFile } from './saveFile.mjs'
+import { promisify } from 'util'
 
-export function download(url, filename, cb) {
-  console.log(`Downloading ${url} into ${filename}`)
-  superagent.get(url).end((err, res) => {
-    if (err) return cb(err)
-
-    saveFile(filename, res.text, (err) => {
-      if (err) return cb(err)
-      console.log(`Downloaded and saved: ${url}`)
-      cb(null, res.text)
+const mkdirpPromises = promisify(mkdirp)
+export function download(url, filename) {
+  console.log(`Downloading ${url}`)
+  let content
+  return superagent
+    .get(url)
+    .then((res) => {
+      content = res.text
+      return mkdirpPromises(dirname(filename))
     })
-  })
+    .then(() => fsPromises.writeFile(filename, content))
+    .then(() => {
+      console.log(`Downloaded and saved: ${url}`)
+      return content
+    })
 }
