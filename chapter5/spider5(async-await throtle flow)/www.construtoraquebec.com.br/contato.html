@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--LINK DO CSS-->
+    <!--<link href="Style.css" type="text/css" rel="stylesheet">-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="elementos/elementos_site-25.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>Construtora Quebec</title>
+    <!--<meta name="viewport" content="width=500px, initial-scale=1.0" />-->
+</head>
+
+<!--MENU SUPERIOR -->
+
+<body onload="" class="borda">
+    <header>
+        <div class="container">
+            <div class="smalcontainer">
+                <div class="subcontainer">
+                    <a href="./index.html"><img class="logo" src="./elementos/elementos_site_1.png"></a>
+                </div>
+                <nav class="navbar">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" id="menu" href="./index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="menu" href="./sobre.html">INSTITUCIONAL</a>
+                        </li>
+                        <div id="menu" class="dropdown">
+                            <li class="nav-item">
+                                <a class="nav-link" id="menu">ATUAÇÃO<span class="arrow"></span></a>
+                            </li>
+                            <div class="submenu">
+                                <li class="nav-item">
+                                    <a class="nav-link" id="menu" href="./fotovoltaica.html">FOTOVOLTAICA</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="menu" href="./eolica.html">EÓLICA</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="menu" href="./hidreletrica.html">HIDRELÉTRICA</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="menu" href="./barragem.html">MINERAÇÃO</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="menu" href="./industrial.html">INDUSTRIAL</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="menu" href="./linhas.html">LINHAS DE TRANSMISSÃO</a>
+                                </li>
+                            </div>
+                        </div>
+                        <li class="nav-item">
+                            <a class="nav-link" id="menu" href="./clientes.html">CLIENTES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="menu" href="./esg.html">ESG</a>
+                        </li>
+                        <div id="menu" class="dropdown">
+                            <li class="nav-item">
+                                <a class="nav-link" id="menu">CONTATO<span class="arrow"></span></a>
+                            </li>
+                            <div class="submenu">
+                                <li class="nav-item separator">
+                                    <a class="nav-link" id="menu" href="./contato.html">FALE CONOSCO</a>
+                                </li>
+                                <li class="nav-item separator">
+                                    <a class="nav-link" id="menu" href="https://quebec.gupy.io/" target="_blank">TRABALHE
+                                        CONOSCO</a>
+                                </li>
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="hamburger">
+                        <div class="barras">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="disque">
+                <a href="https://canal.ouvidordigital.com.br/quebec"><img class="disque2"
+                        src="./elementos/elementos_site-16.png"></a>
+            </div>
+            <div class="tradutor">
+                <a href="./site_eng/contato.html">
+                    <img class="tradutor_img" src="./elementos/elementos_site-15.png">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!--CONTEÚDO-->
+    <div class="background_contato">
+        <div class="org_contact">
+            <div class="text_contato">
+                <div class="feedback hiddenright">
+                    <p class="texto_contato_2">A Quebec quer ouvir sua opinião!</p>
+                </div>
+
+                <div class="opiniao">
+                    <div class="feedback2 hiddenright">
+                        <p class="texto_contato_desc">Os feedbacks dos clientes e parceiros são essenciais para o aprimoramento da nossa empresa.</p>
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="conteuto_contato">
+                <!--FORMULARIO DE ENVIO-->
+                <div class="container_form hiddenright" id="form">
+                    <div class="loc">
+                        <form class="contact" action="https://formsubmit.co/comunicacao@construtoraquebec.com.br" method="POST">
+                            <br>
+                            <div class="fonte_localization">
+                                <p class="texto_formulario">Entre em contato com a Quebec</p>
+                            </div>
+                            <hr style="background:rgb(0, 90, 80); color:transparent; height: 7px; border:0;">
+                            </hr>
+                            <br><br>
+                            <fieldset>
+                                <label>Seu nome</label><br>
+                                <input class="fontfam" placeholder="Nome e Sobrenome" id="nome" type="text" tabindex="1" name="name" required>
+                            </fieldset><br>
+        
+                            <fieldset>
+                                <label>Seu e-mail</label><br>
+                                <input class="fontfam" placeholder="exemplo@exemplo.com.br" id="email" type="email" name="email" tabindex="2"
+                                    required>
+                            </fieldset><br>
+        
+                            <fieldset>
+                                <label>Seu telefone</label><br>
+                                <input class="fontfam" placeholder="+xx (xx) xxxx-xxxx" id="telefone" type="tel" mensagem="telefone"
+                                    tabindex="3" name="telefone" required>
+                            </fieldset><br>
+        
+                            <fieldset>
+                                <label>Sua mensagem</label><br>
+                                <textarea class="fontfam" id="mensagem" placeholder="Deixe aqui sua mensagem" type="mensagem"
+                                    name="mensagem" tabindex="4" required></textarea>
+                            </fieldset>
+                            <br>
+                            <fieldset>
+                                <button id="botao" name="submit" class="contact-submit"><p class="botao">Enviar</p></button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <!--Mapa da quebec-->
+                <div class="container_form2 hiddenleft">
+                    <div class="loc2">
+                        <form class="contact" method="POST">
+                            <br>
+                            <div class="fonte_localization2">
+                                <p class="texto_formulario2">Localização da empresa</p>
+                            </div>
+                            <div class="maps_contact">
+                                <hr style="background:rgb(0, 90, 80); color:transparent; height: 7px; border:0;">
+                                </hr>
+                                <iframe class="map_formatation"
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7500.1921233645135!2d-43.957424!3d-19.962462!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa697ec990ed12b%3A0x7342da24f8785a19!2sR.%20Paulo%20Freire%20de%20Ara%C3%BAjo%2C%2068%20-%20Estoril%2C%20Belo%20Horizonte%20-%20MG%2C%2030494-280!5e0!3m2!1spt-BR!2sbr!4v1678988021293!5m2!1spt-BR!2sbr"
+                                    width="700" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    
+    <!--RODAPE-->
+    <div class="rodape">
+        <div class="rodape_2">
+            <div class="fale_conosco">
+                <div class="acesse" align="center">
+                    <a href="./contato.html"><img class="imagem_redes" src="./elementos/elementos_site-41.png"></a>
+                </div>
+                <div class="comunicacao">
+                    <p class="textocopy">
+                        Rua Paulo Freire de Araújo, 68 - Estoril<br>
+                        Belo Horizonte - MG / 30494-280<br><br>
+                        comunicacao@construtoraquebec.com.br<br><br>
+                        +55 (31) 3297.0833<br>
+                    </p>
+                </div>
+            </div>
+    
+            <div class="redes">
+                <div class="acesse">
+                    <img class="imagem_redes" src="./elementos/elementos_site-42.png">
+                </div>
+                <div class="ali_rede">
+                    <div class="rede_icon">
+                        <div class="alinhamento_redes">
+                            <a href="https://www.instagram.com/construtoraquebec"><img class="redes_sociais"
+                                    src="./elementos/elementos_site-11.png"></a>
+                        </div>
+                    </div>
+                    <div class="rede_icon">
+                        <div class="alinhamento_redes">
+                            <a href="https://www.facebook.com/quebecengenhariaoficial/"><img class="redes_sociais"
+                                    src="./elementos/elementos_site-12.png"></a>
+                        </div>
+                    </div>
+                    <div class="rede_icon">
+                        <div class="alinhamento_redes">
+                            <a href="https://www.linkedin.com/company/35436685/admin/?feedType=following"><img
+                                    class="redes_sociais" src="./elementos/elementos_site-13.png"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="trabalhe">
+                    <div>
+                        <img class="trabalhe_conosco" src="./elementos/elementos_site-70.png">
+                    </div>
+                    <div class="trabalhe_conosco">
+                        <a href="https://quebec.gupy.io/" target="_blank">
+                            <p class="textocopy">Trabalhe conosco</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="linha_copy">
+                <hr class="linha" color="gray">
+            </div>
+            <div class="direitos">
+                <p class="textocopy">Direitos reservados Construtora Quebec &copy;</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="./script_2.js"></script>
+</body>
+</html>
