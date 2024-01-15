@@ -8,7 +8,7 @@ export class FilterByCountry extends Transform {
   }
 
   _transform(record, _encoding, cb) {
-    if (record.country === this.country) {
+    if (record.Country === this.country) {
       this.push(record)
     }
     cb()
@@ -19,11 +19,11 @@ export class SumProfit extends Transform {
   constructor(options = {}) {
     options.objectMode = true
     super(options)
-    this.total = total
+    this.total = 0
   }
 
   _transform(record, _encoding, cb) {
-    this.total += Number.parseFloat(record.profit)
+    this.total += Number.parseFloat(record.Profit)
     cb()
   }
   _flush(cb) {
@@ -31,5 +31,3 @@ export class SumProfit extends Transform {
     cb()
   }
 }
-
-// Continue.... remember there is an example as well
