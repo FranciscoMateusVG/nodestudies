@@ -15,7 +15,10 @@
     "csv-parse": "^5.5.3",
     "mkdirp": "^0.5.5",
     "mkdirp-promise": "^5.0.1",
+    "pumpify": "^2.0.1",
+    "request-promise": "^4.2.6",
     "slug": "^1.1.0",
+    "split": "^1.0.1",
     "superagent": "^5.2.2"
   }
 }
