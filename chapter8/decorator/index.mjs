@@ -88,3 +88,65 @@ const enhancedCalculator = new EnhancedCalculator(stackCalculator)
 enhancedCalculator.putValue(3)
 enhancedCalculator.putValue(2)
 console.log(enhancedCalculator.add())
+
+// Object augmentation or monkey patching
+function patchCalculator(calculator) {
+  // new method
+  calculator.add = function () {
+    const addend = this.getValue()
+    const augend = this.getValue()
+    const result = addend + augend
+    calculator.putValue(result)
+    return result
+  }
+
+  //modified method
+  const divideOriginal = calculator.divide
+  calculator.divide = function () {
+    const divisor = calculator.peekValue()
+    if (divisor === 0) {
+      throw new Error('Division by zero')
+    }
+
+    return divideOriginal.apply(calculator)
+  }
+
+  return calculator
+}
+
+const calculatorToBePatched = new StackCalulator()
+const patchedCalculator = patchCalculator(calculatorToBePatched)
+
+// Proxy Object
+const enhancedCalculatorHandler = {
+  get(target, property) {
+    if (property === 'add') {
+      // new method
+      return function add() {
+        const addend = target.getValue()
+        const augend = target.getValue()
+        const result = addend + augend
+        target.putValue(result)
+        return result
+      }
+    } else if (property === 'divide') {
+      // modified methor
+      return function () {
+        const divisor = target.peekValue()
+        if (divisor === 0) {
+          throw new Error('Division by zero')
+        }
+
+        return target.divide()
+      }
+    }
+
+    return target[property]
+  }
+}
+
+const calculatorToBeProxied = new StackCalulator()
+const enhancedCalculatorProxy = new Proxy(
+  calculatorToBeProxied,
+  enhancedCalculatorHandler
+)
