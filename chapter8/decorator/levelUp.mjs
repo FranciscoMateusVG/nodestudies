@@ -1,6 +1,4 @@
 import { Level } from 'level'
-import { dirname, join } from 'path'
-import { fileURLToPath } from 'url'
 
 function levelSubscribe(db) {
   db.subscribe = (pattern, listener) => {
@@ -15,9 +13,6 @@ function levelSubscribe(db) {
   }
 }
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-
-const dbPath = join(__dirname, 'db')
 const db = new Level('example', { valueEncoding: 'json' })
 levelSubscribe(db)
 
