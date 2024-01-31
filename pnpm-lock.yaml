@@ -14,6 +14,12 @@ dependencies:
   csv-parse:
     specifier: ^5.5.3
     version: 5.5.3
+  ini:
+    specifier: ^4.1.1
+    version: 4.1.1
+  json-over-tcp-2:
+    specifier: ^0.3.5
+    version: 0.3.5
   level:
     specifier: ^8.0.0
     version: 8.0.0
@@ -23,6 +29,9 @@ dependencies:
   mkdirp-promise:
     specifier: ^5.0.1
     version: 5.0.1
+  object-path:
+    specifier: ^0.11.8
+    version: 0.11.8
   pumpify:
     specifier: ^2.0.1
     version: 2.0.1
@@ -438,9 +447,19 @@ packages:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
     dev: false
 
+  /ini@4.1.1:
+    resolution: {integrity: sha512-QQnnxNyfvmHFIsj7gkPcYymR8Jdw/o7mp5ZFihxn6h8Ci6fh3Dx4E1gPjpQEpIuPo9XVNY/ZUwh4BPMjGyL01g==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    dev: false
+
   /is-buffer@2.0.5:
     resolution: {integrity: sha512-i2R6zNFDwgEHJyQUtJEk0XFi1i0dPFn/oqjK3/vPCcDeJvW5NQ83V8QbicfF1SupOaB0h8ntgBC2YiE7dfyctQ==}
     engines: {node: '>=4'}
+    dev: false
+
+  /is-stream@2.0.1:
+    resolution: {integrity: sha512-hFoiJiTl63nn+kstHGBtewWSKnQLpyb155KHheA1l39uvtO9nWIop1p3udqPcUd/xbF1VLMO4n7OI6p7RbngDg==}
+    engines: {node: '>=8'}
     dev: false
 
   /is-typedarray@1.0.0:
@@ -453,6 +472,14 @@ packages:
 
   /jsbn@0.1.1:
     resolution: {integrity: sha512-UVU9dibq2JcFWxQPA6KCqj5O42VOmAY3zQUfEKxU0KpTGXwNoCjkX1e13eHNvw/xPynt6pU0rZ1htjWTNTSXsg==}
+    dev: false
+
+  /json-over-tcp-2@0.3.5:
+    resolution: {integrity: sha512-aN8/NDN3eGy9zbF4e+nwEKjt/y3M3XJUJnT2KAUDpPm1YEH2HefoLECg9KUuaQEJYd4xkQYutbnxpcXjaQENkA==}
+    engines: {node: '>=10'}
+    dependencies:
+      is-buffer: 2.0.5
+      is-stream: 2.0.1
     dev: false
 
   /json-schema-traverse@0.4.1:
@@ -581,6 +608,11 @@ packages:
 
   /object-inspect@1.13.1:
     resolution: {integrity: sha512-5qoj1RUiKOMsCCNLV1CBiPYE10sziTsnmNxkAI/rZhiD63CF7IqdFGC/XzjWjpSgLf0LxXX3bDFIh0E18f6UhQ==}
+    dev: false
+
+  /object-path@0.11.8:
+    resolution: {integrity: sha512-YJjNZrlXJFM42wTBn6zgOJVar9KFJvzx6sTWDte8sWZF//cnjl0BxHNpfZx+ZffXX63A9q0b1zsFiBX4g4X5KA==}
+    engines: {node: '>= 10.12.0'}
     dev: false
 
   /once@1.4.0:
