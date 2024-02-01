@@ -17,8 +17,8 @@ class ConfigTemplate {
     return objectPath.get(this.data, path)
   }
 
-  set(path) {
-    return objectPath.set(this.data, path)
+  set(path, value) {
+    return objectPath.set(this.data, path, value)
   }
 
   _serialize() {
@@ -41,11 +41,11 @@ export class JsonConfig extends ConfigTemplate {
 }
 
 export class IniConfig extends ConfigTemplate {
-  _serialize(data) {
+  _deserialize(data) {
     return ini.parse(data)
   }
 
-  _deserialize(data) {
+  _serialize(data) {
     return ini.stringify(data)
   }
 }
@@ -53,13 +53,13 @@ export class IniConfig extends ConfigTemplate {
 async function main() {
   const jsonConfig = new JsonConfig()
   await jsonConfig.load('samples/conf.json')
-  jsonConfig.set('book.nodejs', 'design patterns')
-  await jsonConfig.save('config.json')
+  jsonConfig.set('nodejs', 'design patterns')
+  await jsonConfig.save('conf_mod.json')
 
   const iniConfig = new IniConfig()
   await iniConfig.load('samples/conf.ini')
-  iniConfig.set('book.nodejs', 'design patterns')
-  await iniConfig.save('config.ini')
+  iniConfig.set('nodejs', 'design patterns')
+  await iniConfig.save('conf_mod.ini')
 }
 
 main()
